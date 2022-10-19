@@ -37,7 +37,7 @@ dependencies:
   shared_preferences: ^2.0.15
   http:
   audio_video_progress_bar: ^0.9.0
-  just_audio: ^0.9.29
+  just_audio: ^0.9.15
   
 
 dev_dependencies:

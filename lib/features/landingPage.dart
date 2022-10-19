@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musicmodel/constants/assets.dart';
 import 'package:musicmodel/constants/route_strings.dart';
 import 'package:musicmodel/constants/shared_pref.dart';
+import 'package:musicmodel/constants/size.dart';
 import 'package:musicmodel/constants/strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,8 +28,8 @@ class _LandingPageState extends State<LandingPage> {
               image: AssetImage(Assets.stack),
               fit: BoxFit.cover,
             ),
-            const Positioned(
-                top: 100,
+            Positioned(
+                top: size(context).height * 0.1,
                 left: 30,
                 child: Text(
                   "Hi!",
@@ -38,16 +39,17 @@ class _LandingPageState extends State<LandingPage> {
                       fontWeight: FontWeight.bold),
                 )),
             Positioned(
-                height: 360,
-                width: 350,
-                top: 200,
+                height: size(context).height / 2,
+                width: size(context).width * 0.9,
+                top: size(context).height * 0.2,
                 left: 20,
                 child: Card(
                   color: Color.fromARGB(255, 248, 247, 247).withOpacity(0.4),
                   elevation: 50,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 60, horizontal: 14),
+                    padding: EdgeInsets.symmetric(
+                        vertical: size(context).height * 0.08,
+                        horizontal: size(context).width * 0.04),
                     child: Column(
                       children: [
                         TextFormField(
@@ -67,7 +69,7 @@ class _LandingPageState extends State<LandingPage> {
                                 return "Username is required";
                               }
                             }),
-                        const SizedBox(height: 30),
+                        SizedBox(height: size(context).height * 0.04),
                         TextFormField(
                           controller: _email,
                           decoration: InputDecoration(
@@ -90,10 +92,10 @@ class _LandingPageState extends State<LandingPage> {
                             }
                           },
                         ),
-                        const SizedBox(height: 40),
+                        SizedBox(height: size(context).height * 0.04),
                         Container(
-                          width: 200,
-                          height: 40,
+                          width: size(context).height * 0.25,
+                          height: size(context).height * 0.06,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   primary: Color.fromARGB(255, 117, 30, 171)),
